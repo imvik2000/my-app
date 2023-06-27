@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+img
+{
+    width: 320px;
+    height: 270px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+div{
+    margin: 40px auto;
+    width: 80%;
+}
+
+hr
+{
+width: 400px;
+margin: 25px  0ch;
+}
+
+button{
+    width: 160px;
+    height: 45px;
+    border-radius: 5px;
+  font-size: 15px;
+}
+input{
+    width: 200px;
+    font-size: 15px;
+    padding: 10px;
+}
+#edit-view{
+    display: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+   </style>
+</head>
+<body>
+   
+    <div id="display-view">
+    <h1>User Profile</h1>
+    <img src="my-app/app/profile-1.jpg" alt="">
+    <hr>
+
+    <span>Name: </span><b id="name">Anna Smith</b>
+    <hr />
+
+    <span>Email: </span><b id="email">anna.smith@example.com</b>
+    <hr />
+
+    <span>Interest: </span><b id="interests">coding</b>
+    <hr />
+    <button onclick="handleEditProfile()">Edit Profile</button>
+</div>
+
+<div id="edit-view">
+    <h1>User Profile</h1>
+    <img src="profile-1.jpg" alt="">
+    <hr>
+
+    <span>Name: </span> <input type="text" id="input-name" placeholder="Anna Smith" />
+    <hr />
+
+    <span>Email: </span><input type="text" id="input-email" placeholder="bca@email.com" />
+    <hr />
+
+    <span>Interests: </span><input type="text" id="input-interests" placeholder="coding" />
+    <hr />
+    <button onclick="handleUpdateProfile()">Update Profile</button>
+</div>
+<script>
+function handleEditProfile(){
+    var name = document.getElementById("name").textContent
+    var inputName = document.getElementById("input-name")
+    inputName = name
+    
+    var email = document.getElementById("email").textContent
+    var inputEmail = document.getElementById("input-email")
+    inputEmail = email
+    
+    var interest = document.getElementById("name").textContent
+    var inputInterest = document.getElementById("input-interests")
+    inputInterest = interest
+    
+    
+    document.getElementById("edit-view").style.display="block"
+    document.getElementById("display-view").style.display="none"
+     
+    
+    
+    
+    }
+    
+    function handleUpdateProfile(){
+        document.getElementById("edit-view").style.display="none"
+        document.getElementById("display-view").style.display="block"
+        
+        var updatedName = document.getElementById("input-name").value
+      var name = document.getElementById("name")
+     name.textContent=updatedName
+    
+     var updatedEmail = document.getElementById("input-email").value
+     var email = document.getElementById("email")
+    email.textContent=updatedEmail
+    
+    var updatedInterest = document.getElementById("input-interests").value
+    var interest = document.getElementById("interests")
+    interest.textContent=updatedName
+    
+        
+        }
+
+    </script>
+</body>
+</html>
